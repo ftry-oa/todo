@@ -28,8 +28,8 @@ class App extends Component {
         return (
             <div>
                 <AddTodo />
-                {loading && 'loading....'}
-                <TodoList todos={todos} onTodoClick={this.onTodoClick}/>
+                {loading && (<div className="tips">loading....</div>)}
+                <TodoList loading={loading} todos={todos} onTodoClick={this.onTodoClick}/>
                 <Footer />
             </div>
         )

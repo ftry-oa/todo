@@ -1,15 +1,18 @@
-import React from 'react';
+import React from 'react'
+import { List } from 'antd-mobile'
 
+const Item = List.Item
 
 const Todo = ({ onClick, completed, text }) => {
-    const style = {textDecoration: completed ? 'line-through' : 'none'}
+    const className = completed ? 'completed' : ''
     return (
-    <li
-        onClick={onClick}
-        style={style}
-    >
-        {text}
-    </li>
+        <Item
+            onClick={onClick}
+            className={className}
+            extra={(<i className="status iconfont icon-chenggong"></i>)}
+        >
+            {text}
+        </Item>
     )
 }
 

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reduxThunk from 'redux-thunk'
+import './common/'
 import rootReducer from './store/reducers.js'
 import './mock'
 const store = createStore(rootReducer, applyMiddleware(reduxThunk))
@@ -14,5 +15,5 @@ ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>, 
-    document.getElementsByTagName('BODY')[0],
+    document.getElementById('root'),
 )

@@ -26,15 +26,23 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader',
+            },
+            {
+                test: /\.css$/,
+                // exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
             }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin(),
-        new webpack.DefinePlugin({
-            // 'process.env': {
-            //     NODE_ENV: JSON.stringify(env || 'production')
-            // }
-        })
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './src/template.html')
+        }),
+        new webpack.DefinePlugin({})
     ]
 }

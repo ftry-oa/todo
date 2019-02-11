@@ -31,8 +31,8 @@ export function initTodos(list) {
 export function dispatchInitTodos() {
   return (dispatch) => {
     dispatch(setLoading(true))
-    getTodos().then((data) => {
-      dispatch(initTodos(data.list))
+    return getTodos().then((data) => {
+      dispatch(initTodos(data.body.todos))
       dispatch(setLoading(false))
     }, (err) => {
       console.log('@@@fail', err)

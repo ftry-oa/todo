@@ -1,7 +1,7 @@
 // reducers.js
 import { combineReducers } from 'redux'
 // 待办事项的过滤条件
-function visibilityFilter(state = 'SHOW_ALL', action) {
+export function visibilityFilter(state = 'SHOW_ALL', action) {
     switch (action.type) {
         case 'SET_VISIBILITY_FILTER':
             return action.filter
@@ -10,7 +10,7 @@ function visibilityFilter(state = 'SHOW_ALL', action) {
     }
 }
 // 待办事项列表reducer
-function todos(state = [], action) {
+export function todos(state = [], action) {
     switch (action.type) {
         // 添加待办事项
         case 'ADD_TODO':
@@ -38,7 +38,7 @@ function todos(state = [], action) {
     }
 }
 
-function loading (state=false, action) {
+export function loading (state=false, action) {
     switch(action.type) {
         case 'SET_LOADING':
             return !!action.loading

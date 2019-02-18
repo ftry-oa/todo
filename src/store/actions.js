@@ -32,7 +32,7 @@ export function dispatchInitTodos() {
   return (dispatch) => {
     dispatch(setLoading(true))
     return getTodos().then((data) => {
-      dispatch(initTodos(data.body.todos))
+      dispatch(initTodos(data.list))
       dispatch(setLoading(false))
     }, (err) => {
       console.log('@@@fail', err)

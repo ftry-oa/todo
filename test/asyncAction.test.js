@@ -15,14 +15,12 @@ describe('async action test', () => {
         })
         .get('/getTodos')
         .reply(200, {
-            body: {
-                todos: [
-                    {
-                        text: 'todo-item',
-                        completed: true,
-                    },
-                ]
-            }
+            list: [
+                {
+                    text: 'todo-item',
+                    completed: true,
+                },
+            ]
         })
 
         const actionTypes = [
